@@ -16,10 +16,22 @@ public class GifController {
     @Autowired// przywiazuje komponent i tworzy obiekt typu ponizej.
     GifRepository gifRepository;
 
-    @RequestMapping("/") // odnosnik do adresu strony
+    @RequestMapping("/showGifsInBrowser") // odnosnik do adresu strony
     @ResponseBody // wyswietla w przegladarce
     public List<String> displayGifsInBrowser() {
         return gifRepository.getGifsNames();
+    }
+
+    @RequestMapping("/")
+    @ResponseBody
+    public String listGifs(){
+        List<Gif> gifs = gifRepository.getAllGifs();
+
+        // 2. przekazanie gifa do view
+
+        // 3. zwracanie widoku
+
+        return gifs.toString();
     }
 
 

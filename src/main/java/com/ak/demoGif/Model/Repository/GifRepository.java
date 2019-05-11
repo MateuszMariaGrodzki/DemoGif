@@ -18,6 +18,8 @@ public class GifRepository {
             new Gif("infinite-andrew","andrew",true)
     );
 
+    public List<Gif> getAllGifs() { return ALL_GIFS; }
+
     public List<String> getGifsNames(){
         List<String> result = new ArrayList<>();
         for (Gif gif: ALL_GIFS) {
